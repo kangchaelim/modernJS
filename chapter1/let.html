@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let(및 const) 키워드로 선언된 변수는 블록 스코프로 종속된다.
+        // 즉 변수가 선언된 블록과 그 하위 블록 내에서만 사용할 수 있다. 
+        
+        let x = "global";
+
+        if(x === "global"){
+            let x = "block-scoped";
+
+            console.log(x);
+            // block-scoped
+        }
+
+        console.log(x);
+        // global
+
+        var y = "global";
+
+        if(y === "global"){
+            var y = "block-scoped";
+
+            console.log(y);
+            // block-scoped
+        }
+
+        console.log(y);
+        // block-scoped
+
+        
+    </script>
+</body>
+</html>

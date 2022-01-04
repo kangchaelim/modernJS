@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var 키워드로 선언된 변수는 함수 스코프에 종속된다. 반면 for 루프(블록스코프) 내에서 var 키워드로 변수를 선언하면 이 변수를 for 루프 밖에서도 사용할 수 있다.
+
+        for (var i = 0; i < 10;i++) {
+            var leak = "I am available outside of the loop"
+        }
+
+        console.log(leak);
+        // I am available outside of the loop
+
+        function myFunc() {
+            var functionScoped = "I am available outside of the loop";
+            console.log(functionScoped);
+        }
+
+        myFunc();
+        // I am available outside of the loop
+        console.log(functionScoped);    
+        // Uncaught ReferenceError: functionScoped is not defined
+        
+        // 첫 번째 예제에서는 var의 값이 블록스코프를 벗어나도 for 루프 외부에서 접근할 수 있는 반면, 두 번째 예제에서는 var가 함수 스코프 내에 제한되어 함수 외부에서 접근할 수 없다.
+        
+    </script>
+</body>
+</html>

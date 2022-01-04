@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // TDZ(temporal dead zone 일시적 비활성 구역)
+
+        console.log(i);
+        var i = "i am a variable";
+        // undefined
+
+        console.log(j);
+        let j = "i am a let";
+        // Uncaught ReferenceError: Cannot access 'j' before initialization
+        // TDZ에 있게 됨
+
+        // var 은 정의되기 전에 접근할 수 있지만, 그 값에는 접근할 수 없다.
+        // let 과 const는 정의하기 전에 접근 할 수 없다.
+
+        // var, let, const 모두 다른 소스에서 읽을 수 있는 내용임에도 불구하고 호이스팅 대상이 된다.
+        // 즉, 코드가 실행되기 전에 처리되고 해당 스코프(글로벌이든 블록이든) 상단으로 올라간다.
+
+        // undefined 값을 얻는 것보다 오류가 발생하는 편이 코드 디버깅이 더 쉽다.
+    </script>
+</body>
+</html>
