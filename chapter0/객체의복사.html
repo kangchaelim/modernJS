@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 항등연산자 (==) 완전항등연산자 (===)
+        // 동일한 객체를 비교할 때만 true 반환
+        // 빈객체 or 동일한 속성을 가진 객체끼리 비교할 때는 false 반환
+
+        // 자바스크립트에서 객체의 복사본을 만드는 빠른 방법 중 하나는 Object.assign()
+        const car = {
+            color : 'red'
+        };
+
+        const secondCar = Object.assign({}, car);
+        car.wheels = 4;
+        console.log(car);
+        // {color : 'red', wheels : 4}
+        console.log(secondCar);
+        // {color : 'red'}
+    </script>
+</body>
+</html>

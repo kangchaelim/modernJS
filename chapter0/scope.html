@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var myInt = 1;
+
+        // if(myInt === 1) {
+        //     var mySecondInt = 2;
+        //     console.log(mySecondInt);
+        //     // 2
+        // }
+
+        // console.log(mySecondInt);
+        // 2
+
+        // var 키워드로 선언된 변수 mySecondInt는 블록 스코프를 가지지 않기 때문에 블록 외부에서도 그 값에 접근할 수 있다.
+
+        var myInt = 1;
+
+        if(myInt === 1) {
+            let mySecondInt = 2;
+            console.log(mySecondInt);
+            // 2
+        }
+
+        console.log(mySecondInt);
+        // Uncaught ReferenceError: mySecondInt is not defined
+    </script>
+</body>
+</html>

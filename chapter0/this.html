@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const myCar = {
+            color : 'red',
+            logColor : function() {
+                console.log(this.color)
+            },
+        };
+
+        myCar.logColor();
+        // red
+
+        function logThis() {
+            console.log(this);
+        }
+
+        logThis();
+        // Window{...} 
+
+        // this 값을 수동으로 설정하고자 할 때? .bind() .call() .apply()
+    </script>
+</body>
+</html>
