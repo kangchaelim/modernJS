@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function calculaterPrice(total, tax = 0.1, tip = 0.05){
+            // tax나 tip에 값을 할당하지 않으면 기본값으로 0.1과 0.05가 쓰인다.
+            // return total + (total * tax) + (total * tip);
+        // }
+
+        // tip에 0.15를 할당하려 했지만 아래처럼 쓰면 0.15는 두 번째 인수 tax에 할당된다.
+        // calculaterPrice(100, 0.15);
+
+        // calculaterPrice(100, undefined, 0.15);
+        // 원하는대로 작동되기는 하지만 깔끔한 방법은 아님
+
+        function calculaterPrice({total, tax = 0.1, tip = 0.05} = {}){
+            return total + (total * tax) + (total * tip);
+        }
+
+        const bill = calculaterPrice({tip : 0.15, total : 150});
+        console.log(bill);
+        // 187.5
+        
+        // 함수의 인수를 객체로 만들었다. 함수를 호출하면 매개변수가 주어진 키에 맞춰서 입력되기 때문에 매개변수의 순서에 대해 걱정할 필요가 없다.
+        // tip의 기본값은 0.05이지만 0.15로 덮어 썼고 tax는 값을 덮어 쓰지 않아 기본값인 0.1로 유지되었다.
+
+        // ={}를 추가해야 인수를 기본적으로 객체로 설정한다. 함수에 매개변수를 어떻게 전달하든 상관없이 인수는 객체가 된다.
+
+        var b =3;
+        function multiply(a, b = 2) {
+        return a * b;
+        }
+
+        console.log(multiply(5));
+        // 10
+    </script>
+</body>
+</html>
