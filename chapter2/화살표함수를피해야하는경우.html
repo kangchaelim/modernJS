@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const personOne = {
+            age : 10,
+            grow : function(){
+                this.age++;
+                console.log(this.age);
+            }
+        };
+
+        personOne.grow();
+        // 11
+
+        const personTwo = {
+            age : 10,
+            grow : ()=>{
+                // 오류 : 여기서 this는 window 객체를 가리킴
+                this.age++;
+                console.log(this.age);
+            }
+        };
+
+        personTwo.grow();
+
+        // 화살표 함수와 일반 함수의 또 다른 차이점은 arguments 객체에 대한 접근방식이다.
+        // arguments 객체는 함수 내부에서 접근할 수 있는 배열 객체이며, 해당 함수에 전달된 인수의 값을 담고 있다.
+
+        function example() {
+            console.log(arguments[0]);
+        }
+
+        example(1,2,3);
+        // 1
+
+        // 이와 같이 배열 표기법 arguments[0]을 사용하면 첫 번째 인수에 접근할 수 있다.
+        // this 키워드와 비슷하게, 화살표 함수에서 arguments 객체는 부모 스코프의 값을 상속한다.
+
+        // const showWinner = ()=> {
+        //     const winner = arguments[0];
+        //     console.log(`${winner} was the winner`);
+        // };
+
+        // showWinner("A", "B", "C");
+        
+        // Uncaught ReferenceError: arguments is not defined
+    
+
+        // 함수에 전달된 모든 인수에 접근하려면 기존 함수 표기법이나 스프레드 문법을 사용하면 된다.
+
+        const showWinner = function() {
+            const winner = arguments[0];
+            console.log(`${winner} was the winner`);
+        };
+
+        showWinner("A", "B", "C");
+        // A was the winner
+        
+    </script>
+</body>
+</html>
