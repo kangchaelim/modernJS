@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 삼항연산자를 사용하면 템플릿 문자열 내에 로직을 쉽게 추가할 수 있다.
+
+        const isDiscounted = false;
+
+        function getPrice(){
+            console.log(isDiscounted ? "$10" : "$20");
+        }
+
+        getPrice();
+        // $20
+
+        // ? 앞의 조건이 true이면 첫 번째 값이 반환되고, 그렇지 않으면 : 뒤에 있는 값이 반환된다.
+
+        // const artist = {
+        //     name : "Bon Jovi",
+        //     age : 56
+        // };
+
+
+        // artist 객체에 song 프로퍼티가 있을 때만 문장에 추가하고, 없으면 아무것도 반환하지 않음
+
+        // const text = `
+        // <div> 
+        //     <p> ${artist.name} is ${artist.age} years old ${artist.song ? `and wrote the song ${artist.song}` : ""}
+        //     </p>
+        // </div>
+        // `;
+        // console.log(text);
+        // <div> 
+            // <p> Bon Jovi is 56 years old 
+            // </p>
+        // </div>
+
+        const artist = {
+            name : "Trent Reznor",
+            age : 53,
+            song : 'Hurt'
+        };
+        
+        const text = `
+        <div> 
+            <p> ${artist.name} is ${artist.age} years old ${artist.song ? `and wrote the song ${artist.song}` : ""}
+            </p>
+        </div>
+        `;
+        console.log(text);
+        // <div> 
+            // <p> Trent Reznor is 53 years old and wrote the song Hurt
+            // </p>
+        // </div>
+
+         
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const people = [
+            {
+            name : 'A',
+            age : 27},
+            {
+            name : 'B',
+            age : 27},
+            {
+            name : 'C',
+            age : 30}
+        ];
+
+        const markup = `
+        <ul>
+            ${people.map(person => `<li> ${person.name}</li>`)}
+        </ul>
+        `;
+        
+        console.log(markup);
+        // 
+        // <ul>
+        // <li> A</li>,<li> B</li>,<li> C</li>
+        // </ul>
+
+        // map 함수를 사용하여 people의 각 원소에 대해 반복 동작을 수행하고 people 내에 있는 name을 담아 li태그를 표시했다.
+
+        
+    </script>
+</body>
+</html>
