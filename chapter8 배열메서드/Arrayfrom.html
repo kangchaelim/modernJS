@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="fruits">
+        <p>apple</p>
+        <p>banana</p>
+        <p>orange</p>
+    </div>
+
+    <script>
+        // Array.from()은 배열스러운, 즉 배열처럼 보이지만 배열이 아닌 객체를 받아서 실제 배열로 변환해 반환한다.
+
+        // const fruits = document.querySelectorAll('.fruits p');
+        // console.log(fruits);
+        // NodeList(3) [p, p, p]
+        // fruits는 3개의 p태그를 포함한 NodeList(배열과 비슷한 구조)이다.
+
+
+        // 이제 fruits를 배열로 반환하자
+        // const fruitArray = Array.from(fruits);
+        // console.log(fruitArray);
+        // (3) [p, p, p]
+
+        // 이제 배열을 취급하므로 map()을 사용할 수 있다.
+        // const fruitNames = fruitArray.map(fruit => fruit.textContent);
+        // console.log(fruitNames);
+        // (3) ['apple', 'banana', 'orange']
+        
+        // 다음과 같이 단순화할 수도 있다.
+        // const fruits = Array.from(document.querySelectorAll('.fruits p'));
+        // const fruitNames = fruits.map(fruit => fruit.textContent);
+        // console.log(fruitNames);
+        // (3) ['apple', 'banana', 'orange']
+
+
+
+        // Array.from()의 두 번째 인수를 이용해서, 배열에 map 함수를 적용한 것과 동일한 기능을 하는 코드를 작성할 수도 있다.
+
+        const fruits = document.querySelectorAll('.fruits p');
+        const fruitArray = Array.from(fruits, fruit => {
+            console.log(fruit);
+            // <p>apple</p>
+            // <p>banana</p>
+            // <p>orange</p>
+
+            return fruit.textContent;
+            // 태그 자체는 제외하고 태그 안의 텍스트 내용만 얻고자 한다.
+
+        });
+
+        console.log(fruitArray);
+        // (3) ['apple', 'banana', 'orange']
+
+        // map 역할을 하는 함수를 .from() 메서드의 두 번째 인수에 전달하여 동일한 결과를 얻었다.
+        
+    </script>
+</body>
+</html>

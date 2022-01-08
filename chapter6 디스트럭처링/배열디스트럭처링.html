@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 배열을 디스트럭처링할 때는 객체의 디스트럭처링과 달리 {}가 아닌 []을 사용한다.
+
+        // const person = ['alberto', 'montalesi', 25];
+        // const [name, surname, age] = person;
+        // console.log(surname);
+
+        // 생성하려는 변수의 수가 배열의 원소보다 적다면 어떻게 할까?
+        // const person = ['alberto', 'montalesi', 25];
+        // const [name, surname] = person;
+        // console.log(name, surname);
+        // alberto montalesi
+        // 25는 어떤 변수에도 할당되지 않는다.
+
+        // 나머지 모든 값을 얻고 싶다면 레스트 연산자를 사용하면 된다.
+        const person = ['alberto', 'montalesi', 'pizza', 'ice cream', 'cheese cake'];
+        const [name, surname, ...food] = person;
+        console.log(food);
+        // ['pizza', 'ice cream', 'cheese cake']
+
+        // 배열의 처음 두 값은 name, surname에 할당되고 나머지는 food 배열에 할당된다.
+        // ...가 레스트 연산자를 의미한다.
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 보통 배열에 대한 반복
+        // var fruits = ['apple', 'banana', 'orange'];
+        // for (var i = 0; i < fruits.length; i++) {
+        //     console.log(fruits[i]);
+        // }
+        // apple
+        // banana
+        // orange
+
+        // for of 루프를 사용하면 동일한 결과를 얻을 수 있다.
+        const fruits = ['apple', 'banana', 'orange'];
+        for (var fruit of fruits) {
+            console.log(fruit);
+        }
+        // apple
+        // banana
+        // orange
+
+
+        // 객체에 대한 반복
+        // 객체는 이터러블이 아니다. 그러면 객체의 키/값 쌍에 대한 반복은 어떻게 구현할 수 있을까?
+        // 먼저 object.key()를 사용하여 객체의 모든 키를 가져온 후, 키에 대한 반복을 수행하면서 값에 접근하는 것이 가능하다.
+        
+        // 이터러블? 반복 가능한(iterable, 이터러블) 객체는 배열을 일반화한 객체입니다. 이터러블 이라는 개념을 사용하면 어떤 객체에든 for..of 반복문을 적용할 수 있습니다. ... 배열 외에도 다수의 내장 객체가 반복 가능합니다. 문자열 역시 이터러블의 예입니다.
+
+        const car = {
+            maker : 'BMW',
+            color : 'red',
+            year : '2010'
+        };
+
+        for (const prop of Object.keys(car)){
+            const value = car[prop];
+            console.log(prop, value);
+        }
+        // maker BMW
+        // color red
+        // year 2010
+        
+        // 새로운 ES6 함수인 Object.entries()를 사용하여 객체의 모든 키/깂 쌍을 가져온 후, 각 키/값 쌍에 대해 반복을 수행하는 방법도 있다.
+        
+        // quiz
+        let people = ['Tom', 'Jerry', 'Mickey'];
+
+        for (let person of people){
+            console.log(person);
+        }
+
+        // Tom
+        // Jerry
+        // Mickey
+        
+    </script>
+</body>
+</html>

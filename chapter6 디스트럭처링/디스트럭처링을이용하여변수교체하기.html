@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 디스트럭처링 할당을 사용하면 변수의 값을 매우 쉽게 서로 교체할 수 있다.
+
+        // let hungry = 'yes';
+        // let full = 'no';
+        // 식후에는 배고프지(hungry) 않고 배부를(full) 것이다. 값을 교체하자
+
+        // [hungry, full] = [full, hungry];
+        // console.log(hungry, full);
+        // no yes
+
+        // quiz
+        let hungry = 'yes';
+        let full = 'no';
+
+        [hungry, full] = [full, hungry];
+        console.log(hungry);
+        // no
+        console.log(full);
+        // yes
+
+        let arr = ['one', 'two', 'three'];
+        const [one, two, three] = arr;
+        console.log(one);
+        // one
+        console.log(two);
+        // two
+        console.log(three);
+        // three
+        
+    </script>
+</body>
+</html>

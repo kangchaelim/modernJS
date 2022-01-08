@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // .some()은 조건과 일치하는 원소가 있는지 검색하고 첫번째 일치하는 원소를 찾으면 바로 중지한다.
+        // .every()는 모든 원소가 주어진 조건과 일치하는지 여부를 확인한다.
+
+        const array = [1,2,3,4,5,6,7,8,9];
+        
+        let arraySome = array.some(e => e > 2);
+        console.log(arraySome);
+        // true
+
+        let arrayEvery = array.every(e => e > 2);
+        console.log(arrayEvery);
+        // false
+
+        // 2보다 큰 원소 일부가 있기 때문에 첫 번째 조건은 참이지만 모든 원소가 2보다 크지는 않기 때문에 두 번째 조건은 거짓이다.
+        
+    </script>
+</body>
+</html>
