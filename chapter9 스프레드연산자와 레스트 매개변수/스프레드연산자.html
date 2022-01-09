@@ -73,11 +73,59 @@
         // 기존방식
         function doStuff (x, y, z) {
             console.log(x + y + z);
+            // 3
         }
 
         var args = [0,1,2];
 
         // 함수 호출 인수 전달
+        doStuff.apply(null, args);
+
+        // 스프레드 문법 사용
+        doStuff(...args);
+        // 3
+        console.log(args);
+        // (3) [0, 1, 2]
+
+        // doStuff 함수는 3개의 매개변수를 받는다.
+        // doStuff 함수를 호출할 때 args 배열을 ...args 와 같이 써서 스프레드 연산자와 함께 함수에 전달할 수 있다.
+        // 이렇게 하면 굳이 .apply() 사용에 의존하지 않아도 된다.
+
+        // const name = ['alberto', 'montalesi'];
+
+        // function greet(first, last) {
+        //     console.log(`hello ${first} ${last}`);
+        // }
+
+        // greet(...name);
+        // hello alberto montalesi
+
+        // 배열의 두 값은 함수의 두 인수에 자동으로 할당된다.
+        // 지정된 인수보다 더 많은 값을 제공하면 어떻게 될까?
+
+        const name = ['Jon', 'Paul', 'Jones'];
+
+        function greet(first, last) {
+            console.log(`hello ${first} ${last}`);
+        }
+
+        greet(...name);
+        // hello Jon Paul
+
+        // 배열 내에서 세 개의 값을 제공했지만 함수에는 두 개의 인수만 있으므로 마지막 인수는 제외된다.
+
+
+        // 객체 리터럴과 스프레드(ES2018)
+        let person = {
+            name : 'alberto',
+            surname : 'montalesi',
+            age : 25
+        }
+
+        let clone = {...person};
+        console.log(clone);
+        // {name: 'alberto', surname: 'montalesi', age: 25}
+
         
     </script>
 </body>
