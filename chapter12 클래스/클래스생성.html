@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 클래스는 일차적으로 자바스크립트의 기존 프로토타입 기반 상속에 대한 문법적 설탕이다..
+        
+        // 클래스 선언
+        // class person {
+
+        // }
+
+        // 클래스 표현식
+        // const person = class person {
+
+        // };
+
+        // 클래스 선언 및 클래스 표현식은 호이스팅이 되지 않는다. 클래스에 접근하기 전에 클래스를 선언하지 않으면 ReferenceError가 발생한다.
+
+        class person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            greet() {
+            console.log(`hi, my name is ${this.name} and i'm ${this.age} years old`)
+            };
+            farewell(){
+                console.log('goodbye friend');
+            }
+        }
+
+        const alberto = new person('alberto', 26);
+
+        alberto.greet();
+        // hi, my name is alberto and i'm 26 years old
+        alberto.farewell();
+        // goodbye friend
+
+    </script>
+</body>
+</html>

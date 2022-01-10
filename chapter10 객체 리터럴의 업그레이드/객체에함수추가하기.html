@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES5
+        // const person = {
+        //     name : 'alberto',
+        //     greet : function(){
+        //         console.log('hello');
+        //     }
+        // };
+
+        // person.greet();
+        // hello
+
+        // ES6
+        const person = {
+            name : 'alberto',
+            greet() {
+                console.log('hello');
+            }
+        };
+
+        person.greet();
+        // hello
+
+
+        // 화살표함수는 익명함수라는 것을 기억하고 다음 예제를 살펴보자.
+
+        // 다음 코드는 작동하지 않는다. 함수에 접근하기 위한 키가 필요하다.
+        // const person1 = {
+        //     () => console.log('hello');
+        // };
+
+        const person2 = {
+            greet: () => console.log('hello')
+        };
+        person2.greet();
+        // hello
+
+    </script>
+</body>
+</html>

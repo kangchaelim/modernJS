@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 심벌을 사용하여 객체 속성에 대한 식별자를 만들 수 있다.
+        // const office = {
+        //     'Tom' : 'CEO',
+        //     'Mark' : 'CTO',
+        //     'Mark' : 'CIO',
+        // };
+
+        // for (person in office) {
+        //     console.log(person);
+        // }
+
+        // Tom
+        // Mark   
+
+        // 사무실 객체가 있고, 사무실에는 3명의 사람이 있다. 그 중 2명은 이름이 같다.
+        // 이럴 때 속성 이름이 겹치는 것을 피하기 위해 심벌을 사용할 수 있다.
+
+        // const office = {
+        //     [Symbol('Tom')] : 'CEO',
+        //     [Symbol('Mark')] : 'CTO',
+        //     [Symbol('Mark')] : 'CIO',
+        // };
+
+        // for (person in office) {
+        //     console.log(person);
+        // }
+        // undefined
+
+        // 심벌은 열거 가능하지 않기 때문에 심벌에 대해 반복하려고 하면 undefined를 얻게 된다.
+        // 즉 for in으로 심벌에 대해 반복할 수 는 없다.
+
+        // 객체 속성의 배열을 얻기 위해 Object.getOwnPropertySymbols() 를 사용한다.
+        
+        const office = {
+            [Symbol('Tom')] : 'CEO',
+            [Symbol('Mark')] : 'CTO',
+            [Symbol('Mark')] : 'CIO',
+        };
+
+        const symbols = Object.getOwnPropertySymbols(office);
+        console.log(symbols);
+        // 0: Symbol(Tom)
+        // 1: Symbol(Mark)
+        // 2: Symbol(Mark)
+        // length: 3
+
+        // 배열을 얻은 후 속성에 접근하려면 map을 사용하면 된다.
+        const value = symbols.map(symbol => office[symbol]);
+        console.log(value);
+        // 0: "CEO"
+        // 1: "CTO"
+        // 2: "CIO"
+        // length: 3
+
+    </script>
+</body>
+</html>
