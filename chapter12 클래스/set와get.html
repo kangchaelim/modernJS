@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 세터 및 게터 메서드를 사용하여 클래스 내에 값을 설정하거나 가져올 수 있다.
+
+        class person {
+            constructor(name, surname){
+                this.name = name;
+                this.surname = surname;
+                this.nickname = "";
+            }
+
+            set nicknames(value){
+                this.nickname = value;
+                console.log(this.nickname);
+            }
+
+            get nicknames(){
+                console.log(`your nickname is ${this.nickname}`);
+            }
+        }
+
+        const alberto = new person('alberto', 'montalesi');
+
+        // 셰터를 호출
+        // alberto.nicknames = 'albi';
+        // albi
+
+        // 게터를 호출
+        // alberto.nicknames;
+        // your nickname is albi
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 기존 클래스로부터 상속된 새로운 클래스를 만들려면 extends 키워드를 사용한다.
+
+        class person {
+            constructor(name, age){
+                this.name = name;
+                this.age = age;
+            }
+            greet(){
+                console.log(`hi, my name is ${this.name} and i'm ${this.age} years old`);
+            }
+        }
+
+        // 상속을 통해 만든 새 클래스
+        class adult extends person {
+            constructor(name, age, work){
+                // this.name = name;
+                // this.age = age;
+                super(name, age) // 위 두줄 고쳐 쓰기 adult 클래스는 person으로부터 이름과 나이를 상속받기 때문에 person을 다시 선언하고 초기화할 필요가 없다. super() 생성자가 하는 일이 바로 이것이다.
+                this.work = work;
+            }
+        }
+
+        const alberto = new adult('alberto', 26, 'software developer');
+        // super()를 안썼을 시 생기는 오류 즉 adult를 만들기 앞서 person을 만들어야 한다는 것.
+        // Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+
+
+        console.log(alberto.age);
+        // 26
+        console.log(alberto.work)
+        // software developer
+        alberto.greet();
+        // hi, my name is alberto and i'm 26 years old
+    </script>
+</body>
+</html>
