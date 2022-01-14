@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 프로미스는 비동기 작업의 최종 성공 또는 실패를 나타내는 객체이다.
+
+        // const myPromise = new Promise((resolve, reject) => {
+            // 여기에 코드를 작성
+        // });
+
+        // 이런 방식으로 프로미스를 만든 후, 프로미스의 성공을 알리기 위해서는 resolve를, 실패를 알리기 위해서는 reject를 호출하면 된다.
+
+        // const myPromise = new Promise((resolve, reject) => {
+        //     resolve("The value we get from the promise");
+        // });
+
+        // myPromise.then(
+        //     data => {
+        //         console.log(data);
+        //     }
+        // );
+
+        // The value we get from the promise
+
+        
+        // const myPromise = new Promise((resolve, reject) => {
+        //     setTimeout(()=>{
+        //         resolve("The value we get from the promise");
+        //     }, 2000);
+            
+        // });
+
+        // myPromise.then(
+        //     data => {
+        //         console.log(data);
+        //     }
+        // );
+
+        // 2초 뒤
+        // The value we get from the promise
+
+ 
+        const myPromise = new Promise((resolve, reject) => {
+            setTimeout(()=>{
+                reject(new Error("this is our error"));
+            }, 2000);
+            
+        });
+
+        myPromise
+            .then(data => {
+                console.log(data);
+            })
+
+            .catch(err => {
+                console.error(err);
+            
+            });
+ 
+        // Error: this is our error
+        // at 프로미스.html:51:24
+        
+        // 프로미스가 성공할 때에 값을 얻는 데에 .then()을 사용하고, 프로미스가 실패할 때 오류를 처리하는 데에는 .catch()를 사용한다.
+        // 출력된 오류 로그를 보면 오류가 발생한 위치를 알 수 있다. 단순히 reject("this is our error");라고 작성하지 않고 reject(new Error("this is our error"));라고 작성했기 때문이다.
+
+
+
+    </script>
+</body>
+</html>

@@ -16,7 +16,7 @@
                 // 스프레드 연산자를 사용하지 않으면 
                 // '학생들의 정보가 들어 있는 배열'을 원소로 가진 Array가 생성될 것이다.
 
-                super(...stydents);
+                super(...students);
                 this.name = name;
             }
 
@@ -34,12 +34,17 @@
         );
 
         // // 새로운 학생 추가
-        // myClass.add({name : 'Timmy', mark : 7});
-        // myClass[4];
+        myClass.add({name : 'Timmy', mark : 7});
+        myClass[4];
 
         for (const student of myClass){
             console.log(student);
         }
+        // {name : 'Tim', mark : 6}
+        // {name : 'Tom', mark : 3}
+        // {name : 'Jim', mark : 8}
+        // {name : 'Jon', mark : 10} 
+        // {name : 'Timmy', mark : 10}
 
     </script>
 </body>
